@@ -1440,7 +1440,8 @@ static void wm8960_set_pdata_from_of(struct i2c_client *i2c,
 		pdata->shared_lrclk = true;
 }
 
-static int wm8960_i2c_probe(struct i2c_client *i2c)
+// static int wm8960_i2c_probe(struct i2c_client *i2c)
+static int wm8960_i2c_probe(struct i2c_client *client, const struct i2c_device_id *id)
 {
 	struct wm8960_data *pdata = dev_get_platdata(&i2c->dev);
 	struct wm8960_priv *wm8960;
@@ -1503,8 +1504,10 @@ static int wm8960_i2c_probe(struct i2c_client *i2c)
 	return ret;
 }
 
-static void wm8960_i2c_remove(struct i2c_client *client)
-{}
+static int wm8960_i2c_remove(struct i2c_client *client)
+{
+	return 0;
+}
 
 static const struct i2c_device_id wm8960_i2c_id[] = {
 	{ "wm8960", 0 },
