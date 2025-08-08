@@ -1,4 +1,4 @@
-# WM8960 Audio Driver for CM4
+# WM8960 Audio Driver for CM4 Doly Chafen Mic
 
 ### Install wm8960-soundcard
 Get the wm8960 soundcard source code. and install all linux kernel drivers
